@@ -500,6 +500,8 @@ export const BCarousel = /*#__PURE__*/ Vue.extend({
     // Prev and next controls
     let controls = h()
     if (this.controls) {
+      const prevScope = { labelPrev: this.labelPrev }
+      const nextScope = { labelNext: this.labelNext }
       const prevHandler = evt => {
         /* istanbul ignore next */
         if (!this.isSliding) {
@@ -532,7 +534,7 @@ export const BCarousel = /*#__PURE__*/ Vue.extend({
               keydown: prevHandler
             }
           },
-          [
+          this.normalizeSlot('prevControlButton', prevScope) || [
             h('span', { class: ['carousel-control-prev-icon'], attrs: { 'aria-hidden': 'true' } }),
             h('span', { class: ['sr-only'] }, [this.labelPrev])
           ]
@@ -552,7 +554,7 @@ export const BCarousel = /*#__PURE__*/ Vue.extend({
               keydown: nextHandler
             }
           },
-          [
+          this.normalizeSlot('nextControlButton', nextScope) || [
             h('span', { class: ['carousel-control-next-icon'], attrs: { 'aria-hidden': 'true' } }),
             h('span', { class: ['sr-only'] }, [this.labelNext])
           ]

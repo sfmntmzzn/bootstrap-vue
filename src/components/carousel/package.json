@@ -79,6 +79,32 @@
             "description": "Set the CSS color of the carousel's background"
           }
         ],
+        "slots": [
+          {
+            "name": "prevControlButton",
+            "version": "2.14.0",
+            "description": "Custom button markup to use as previous control",
+            "scope": [
+              {
+                "prop": "labelPrev",
+                "type": "String",
+                "description": "passes down the `labelPrev` property passed to the carousel component."
+              }
+            ]
+          },
+          {
+            "name": "nextControlButton",
+            "version": "2.14.0",
+            "description": "Custom button markup to use as next control",
+            "scope": [
+              {
+                "prop": "labelNext",
+                "type": "String",
+                "description": "passes down the `labelNext` property passed to the carousel component."
+              }
+            ]
+          }
+        ],
         "events": [
           {
             "event": "sliding-start",
